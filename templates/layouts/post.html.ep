@@ -1,0 +1,7 @@
+% extends 'layouts/base';
+
+%#-- 포스트 페이지 테마
+
+% content_after 'base_include' => begin
+ <link rel="stylesheet" type="text/css" href="/css/post.css" />
+% end

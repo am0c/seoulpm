@@ -1,0 +1,9 @@
+% extends 'layouts/base';
+% content_after 'base_include' => begin
+
+%# -- dialog.css should be renamed to dialog_single.css after
+%#    dialog_etc.css is added
+
+<link rel="stylesheet" type="text/css" href="/css/dialog.css" />
+
+% end

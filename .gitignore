@@ -1,0 +1,18 @@
+
+# -- backup files --
+
+*~
+\#*\#
+*.swp
+
+
+# -- directories --
+
+/log/*
+!/log/.exists
+/Encode
+
+
+# -- priviate --
+
+/credential.pl

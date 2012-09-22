@@ -1,0 +1,40 @@
+#comment {
+  min-height: 40px;
+  font-family: UnDotum,Dotum,Arial,Sans;
+  font-size: 13px;
+}
+.cmt {
+  background-color: #fafafa;
+  margin-bottom: 2px;
+  padding: 5px;
+  border-top: 1px solid #ddd;
+  min-height: 51px;
+}
+.cmt img.icon {
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+.cmt .body {
+  margin-left: 42px;
+  margin-top: -2px;
+  padding-left: 8px;
+}
+.cmt .name {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.cmt .tail {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #555;
+}
+.cmt textarea.input {
+  margin-top: 1px;
+  font-size: 13px;  
+  border: 1px solid #ccc;
+  width: 100%;
+  font-family: UnDotum,Dotum,Arial,Sans;
+  resize: none;
+  min-height: 50px;
+}

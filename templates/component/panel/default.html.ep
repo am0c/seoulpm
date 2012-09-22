@@ -1,0 +1,11 @@
+<div class="panel">
+
+% for my $w (@$post_widgets) {
+%   my $name = $w->{id};
+%   my $data = $w->{data};
+%
+%=  include "component/widget/${name}", data => $data;
+%
+% }
+
+</div>

@@ -1,0 +1,38 @@
+%= content 'header_content' => begin
+% my $sel = do {
+% my $path = $self->req->url->path;
+% sub {
+%   my $name = shift;
+%   $path->contains($name) ? q{class="selected"} : ""
+% };
+%};
+<div id="head">
+  <a class="title" href="/">
+    <h1 class="blind">Seoul Perl Mongers</h1>
+    <em class="blind">Social group for Perl monks in Republic of Korea</em>
+  </a>
+  <dl id="menu">
+    % content_after 'header_menu' => begin
+    <dt class="blind">메뉴</dt>
+    <dd <%== $sel->('news') %>><a href="/news">소식</a></dd>
+    <dd <%== $sel->('teatime') %>><a href="/teatime">티타임</a></dd>
+    <dd <%== $sel->('techlog') %>><a href="/techlog">테크로그</a></dd>
+    <dd <%== $sel->('workshop') %>><a href="/workshop">워크샵</a></dd>
+    % end
+    %= content_after 'header_menu'
+  </dl>
+  <ul class="hbar">
+    %= content_after 'header_hbar' => begin
+      % if (defined $user) {
+        <li><em><%= $user->get_column('nickname') %>님 반갑습니다!</em></li>
+        <li><a href="/logout">로그아웃</a></li>
+        <li><a href="/profile">계정관리</a></li>
+      % } else {
+        <li><a href="/login">로그인</a></li>
+      % }
+    <li><a href="/links">참고사이트</a></li>
+    <li><a href="/about">정보</a></li>
+    %= end
+  </ul>
+</div>
+% end

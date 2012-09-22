@@ -1,0 +1,40 @@
+#post {
+  margin-top: 8px;
+  width: 473px;
+  float: left;
+}
+input.title {
+  width: 465px;
+  border: 1px solid #ccc;
+  padding: 3px;
+  font-size: 1.8em;
+  font-family: UnDotum,Dotum,Arial,Sans;
+  font-weight: bold;
+  color: #0066c6;
+}
+#post .wrap_body {
+  padding: 3px;
+  width: 465px;
+  border: 1px solid #ccc;
+}
+#body {
+  width: 100%;
+  border: none;
+  font-size: 12px;
+  font-family: UnDotum,Dotum,Arial,Sans;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#preview {
+  width: 473px;
+  float: right;
+}
+label.blk {
+  color: #444;
+  font-size: 0.9em;
+  margin: 10px 0 4px 0;
+}
+.blk {
+  display: block;
+}

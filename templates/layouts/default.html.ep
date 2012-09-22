@@ -1,0 +1,30 @@
+% extends 'layouts/base';
+
+%#-- 기본 페이지 테마
+
+% content_after 'base_include' => begin
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="/css/default.css" />
+% end
+
+%#-- 기본 페이지에 관리 메뉴 추가
+
+% if (defined $user && $user->has_role('admin')) {
+%= content_after 'header_menu' => begin
+ <dt class="more">관리</dt>
+ <dd class="more"><a href="/admin/info">정보</a></dd>
+ <dd class="more"><a href="/admin/user">사용자</a></dd>
+ <dd class="more"><a href="/admin/menu">메뉴</a></dd>
+% end
+% }
+
+% if (defined $user && $user->has_role('admin')) {
+% my $link_sub = $self->req->url->path->clone->trailing_slash(1)->canonicalize;
+% my $link_base = $link_sub->clone->parts([$link_sub->parts->[0]]);
+%= content_after 'header_menu' => begin
+ <dt class="more">게시판</dt>
+ <dd class="more"><a href="<%= $link_base->merge('post') %>">글쓰기</a></dd>
+ <dd class="more"><a href="<%= $link_sub->merge('edit') %>">편집</a></dd>
+ <dd class="more"><a href="<%= $link_sub->merge('delete') %>">삭제</a></dd>
+% end
+% }

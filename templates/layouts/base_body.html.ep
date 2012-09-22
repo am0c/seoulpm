@@ -1,0 +1,5 @@
+%= content 'body_content' => begin
+<div id="cont">
+  <%= content %>
+</div>
+% end

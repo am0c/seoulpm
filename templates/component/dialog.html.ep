@@ -1,0 +1,12 @@
+<div class="dialog">
+  <strong class="caption"><%= $dialog->{capture} %></strong>
+  <div class="wrap">
+    % if (exists $dialog->{image_url} && defined $dialog->{imgae_url}) {
+      <div class="img"><%= $dialog->{image_url} %></div>
+    % }
+    <div class="msg">
+      <p><%= $dialog->{message} %></p>
+      <%= $dialog->{form} %>
+    </div>
+  </div>
+</div>

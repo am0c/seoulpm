@@ -1,0 +1,23 @@
+% layout 'default';
+% use Text::MultiMarkdown 'markdown';
+
+% content_after 'base_include' => begin
+ <link rel="stylesheet" type="text/css" href="/css/view.css" />
+% end
+
+<div class="main">
+
+  % my %post = $page_post->get_inflated_columns;
+
+  <div class="post">
+    <h3><%= $post{title} %></h3>
+    %== markdown $post{text};
+  </div>
+
+  %= include 'component/comment', submit_url => $self->req->url->path->clone->trailing_slash(1)->merge('comment/submit');
+
+</div>
+
+%= include 'component/panel/default';
+
+<div style="clear: both"></div>

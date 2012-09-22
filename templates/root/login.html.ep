@@ -1,0 +1,16 @@
+% layout 'dialog_single';
+<div class="main">
+  % content 'dlgform' => begin
+    <form method="post" action="/login/submit">
+      <label>아이디</label><input type="text" name="user" />
+      <label>비밀번호</label><input type="password" name="pass" />
+      <input type="submit" value="로그인"/>
+    </form>
+  % end
+  % my $dlg = {
+  %   capture => '로그인',
+  %   message => '로그인을 하지 않아도 모든 서비스를 이용할 수 있습니다.',
+  %   form => content 'dlgform',
+  % };
+  %= include 'component/dialog', dialog => $dlg;
+</div>

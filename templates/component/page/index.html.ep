@@ -1,0 +1,26 @@
+% layout 'default';
+% my $url = $self->req->url->path->trailing_slash(0)->to_string;
+<div class="main">
+
+ % if (defined $page_posts && defined( my $post = $page_posts->next )) {
+  % for ( ; $post ; $post = $page_posts->next ) {
+  %   my %post = $post->get_inflated_columns;
+
+      <div class="post">
+       <span class="date">1月</span>
+       <h3><a href="<%= $url . q{/} . $post{id} %>"><%= $post{title} %></a></h3>
+       <%= $post{text} %>
+      </div>
+
+  % }
+ % } else {
+
+      <div><em>포스트가 없습니다.</em></div>
+
+ % }
+
+</div>
+<div class="panel">
+
+</div>
+<div style="clear: both"></div>

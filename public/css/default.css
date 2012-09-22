@@ -1,0 +1,41 @@
+#cont {
+  position: relative;
+  margin-top: 46px;
+  width: 954px;
+}
+#cont .main {
+  float: left;
+  width: 569px;
+  margin-left: 6px;
+}
+#cont .post {
+  margin: 0 4px 3.5em 4px;
+}
+#cont .post h3 {
+  display: block;
+  font-size: 1.8em;
+  font-family: UnDotum,Dotum,Arial,Sans;
+  font-weight: bold;
+  color: #0066c6;
+  margin-bottom: 0.8em;
+}
+#cont .post h3 a {
+  color: #0066c6;
+}
+#cont .panel {
+  float: right;
+  height: 130px;
+  width: 359px;
+  margin-right: 6px;
+}
+span.date {
+  color: orange;
+  weight: bold;
+}
+p {
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+.widget.w_map {
+  border: 1px solid #ccc;
+}

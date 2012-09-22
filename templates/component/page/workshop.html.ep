@@ -1,0 +1,21 @@
+% layout 'wide';
+<div id="hbar">
+  <div class="wrap">
+    <a href="/">
+      <em class="hide">Seoul Perl Mongers</em>
+      <img class="logo" src="/img/hbar_logo.png" />
+    </a>
+    <h1>Rising Perl Workshop 2008</h1>
+    <ul class="menu">
+      <li><a href="/news">소식</a></li>
+      <li><a href="/teatime">티타임</a></li>
+      <li><a href="/techlog">테크로그</a></li>
+      <li><a href="/workshop">워크샵</a></li>
+    </ul>
+  </div>
+</div>
+<div id="wrap">
+<div id="body">
+ sdf
+</div>
+</div>

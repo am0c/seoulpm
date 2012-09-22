@@ -1,0 +1,20 @@
+% layout 'profile';
+
+% content_after 'base_include' => begin
+ <link rel="stylesheet" type="text/css" href="/css/profile.css" />
+% end
+
+<div class="sbar_l">
+  <div class="me">
+    <img class="img_h" src="https://si0.twimg.com/profile_images/1247064585/am0c.png" />
+  </div>
+</div>
+<div class="main">
+  <div class="top">
+    <strong class="name">Hojung Youn <span class="r">(am0c)</span></strong>
+  </div>
+  <div class="main_l">
+  </div>
+  <div class="main_r">
+  </div>
+</div>

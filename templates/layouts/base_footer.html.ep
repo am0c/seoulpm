@@ -1,0 +1,3 @@
+%= content 'footer_content' => begin
+<div id="foot"></div>
+% end

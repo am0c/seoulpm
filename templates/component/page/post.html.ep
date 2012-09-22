@@ -1,0 +1,14 @@
+% layout 'post';
+<div id="post">
+  <form method="post" action="/teatime/post/submit">
+    <label class="blk">제목:</label>
+    <input type="text" name="title" class="title" value="" />
+    <label class="blk">내용:</label>
+    <div class="wrap_body"><textarea id="body" cols="70" name="body" style="height: 30em;"></textarea></div>
+    <input type="submit" value="글쓰기" />
+  </form>
+</div>
+<div class="preview">
+
+</div>
+<div style="clear: both"></div>

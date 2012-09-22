@@ -1,0 +1,40 @@
+<div id="comment">
+
+  <div class="cmt">
+  <img class="icon" src="https://si0.twimg.com/profile_images/1247064585/am0c.png" />
+  <div class="body">
+    <form id="cmt_form" method="post" action="<%= $submit_url %>">
+      <textarea name="text" class="input"></textarea>
+    </form>
+  </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $("#cmt_form .input").keypress(function(e) {
+        if (e.which == 13) {
+          $("#cmt_form").hide();
+          $("#cmt_form").submit();
+        }
+      });
+    });
+  </script>
+
+%{
+  % my $rs = $page_post->comments;
+  % while (my $comment = $rs->next) {
+  %
+  %   my %cmt = $comment->get_inflated_columns;
+  %   
+      <div class="cmt">
+      <img class="icon" src="https://si0.twimg.com/profile_images/1247064585/am0c.png" />
+      <div class="body">
+        <div class="name"><%= $comment->user->get_column('realname') %></div>
+        <div class="text"><%= $cmt{text} %></div>
+        <div class="tail"><%= $cmt{datetime_create}->set_time_zone('Asia/Seoul')->ymd %></div>
+      </div>
+      </div>
+  % }
+%}
+
+</div>
