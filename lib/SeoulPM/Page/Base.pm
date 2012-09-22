@@ -50,10 +50,10 @@ sub submit {
     my $body = $self->param('body');
 
     require HTML::TreeBuilder::LibXML;
-    require Text::MultiMarkDown;
+    require Text::MultiMarkdown;
 
     my $tree = HTML::TreeBuilder::LibXML->new;
-    $tree->parse(Text::MultiMarkDown::markdown($body));
+    $tree->parse_content(Text::MultiMarkdown::markdown($body));
 
     $self->db($self->_base_model)->create({
         writer_id => $user_id,
@@ -62,7 +62,6 @@ sub submit {
         text_striped => $tree->as_trimmed_text,
     });
 
-    $tree->eof;
     return $self->redirect_to($self->_base_url);
 }
 
