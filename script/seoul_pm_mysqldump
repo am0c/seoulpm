@@ -1,0 +1,36 @@
+#!/usr/bin/env perl
+use warnings;
+use strict;
+
+use MySQL::Diff;
+use Term::ReadKey;
+
+my $db = do {
+    open my $fh, "<", "credential.pl" or die;
+    my $data = do { local $/; <$fh> };
+    eval $data;
+};
+
+my $last = `ls -1 schema | tail -n 1`;
+my $file = `date --utc +%F-%T` . ".sql";
+s/\n// for ($last, $file);
+
+if (defined $last && $last ne '') {
+    print "Enter password: ";
+    ReadMode('noecho');
+    my $pass = ReadLine(0);
+    print "\n";
+    my $diff = MySQL::Diff->new(
+        "only-both" => 1,
+        "keep-old-tables" => 1,
+        "user" => "root",
+        "password" => $pass,
+    );
+    ReadMode(0);
+    $diff->register_db("schema/$last"  => 1);
+    $diff->register_db($db->{database} => 2);
+    open my $fh, ">", "schema/$file" or die;
+    print $fh $diff->diff;
+} else {
+    system("mysqldump --compact --set-charset --no-data -u root -p $db->{database} > schema/$file");
+}
