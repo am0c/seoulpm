@@ -117,6 +117,24 @@ __PACKAGE__->table("user");
   is_nullable: 1
   size: 80
 
+=head2 image_default
+
+  data_type: 'varchar'
+  is_nullable: 1
+  size: 64
+
+=head2 image_thumb
+
+  data_type: 'varchar'
+  is_nullable: 1
+  size: 64
+
+=head2 image_full
+
+  data_type: 'varchar'
+  is_nullable: 1
+  size: 64
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -168,6 +186,12 @@ __PACKAGE__->add_columns(
   { data_type => "char", is_nullable => 0, size => 255 },
   "link",
   { data_type => "char", is_nullable => 1, size => 80 },
+  "image_default",
+  { data_type => "varchar", is_nullable => 1, size => 64 },
+  "image_thumb",
+  { data_type => "varchar", is_nullable => 1, size => 64 },
+  "image_full",
+  { data_type => "varchar", is_nullable => 1, size => 64 },
 );
 
 =head1 PRIMARY KEY
@@ -197,8 +221,8 @@ __PACKAGE__->set_primary_key("id");
 __PACKAGE__->add_unique_constraint("nickname", ["nickname"]);
 
 
-# Created by DBIx::Class::Schema::Loader v0.07033 @ 2012-09-17 08:29:03
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:kJZa6lxIC7fQfNMfBBje/Q
+# Created by DBIx::Class::Schema::Loader v0.07033 @ 2012-09-23 14:45:16
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:SDxfczTVQNPfw3WiRKjTdg
 
 __PACKAGE__->has_many(userroles => 'SeoulPM::Schema::Result::UserRole', 'user_id');
 __PACKAGE__->many_to_many(roles => 'userroles', 'role_id');

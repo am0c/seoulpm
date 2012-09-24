@@ -1,7 +1,7 @@
 <div id="comment">
 
   <div class="cmt">
-  <img class="icon" src="https://si0.twimg.com/profile_images/1247064585/am0c.png" />
+  <img class="icon" src="<%= $user->get_column('image_thumb') %>" />
   <div class="body">
     <form id="cmt_form" method="post" action="<%= $submit_url %>">
       <textarea name="text" class="input"></textarea>
@@ -27,7 +27,7 @@
   %   my %cmt = $comment->get_inflated_columns;
   %   
       <div class="cmt">
-      <img class="icon" src="https://si0.twimg.com/profile_images/1247064585/am0c.png" />
+      <img class="icon" src="<%= $comment->user->get_column('image_thumb') %>" />
       <div class="body">
         <div class="name"><%= $comment->user->get_column('realname') %></div>
         <div class="text"><%= $cmt{text} %></div>

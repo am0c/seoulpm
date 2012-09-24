@@ -4,7 +4,7 @@
 }
 #cont .sbar_l {
   margin-left: 6px;
-  width: 214px;
+  width: 206px;
   float: left;
   min-height: 200px;
 //  background-color: red;
@@ -44,4 +44,15 @@
   min-height: 100px;
   background-color: grey;
   float: right;
+}
+#cont .menu {
+  margin-top: 10px;
+}
+#cont .menu a {
+  display: block;
+  padding: 4px 4px 4px 8px;
+  border: 1px solid #ccc;
+  margin-top: 4px;
+  color: #333;
+  font-weight: bold;
 }

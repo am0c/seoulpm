@@ -38,7 +38,12 @@ sub startup {
         return $self->app->pager->page_to(@_);
     });
 
+    # Static
+
+    push @{$self->static->paths}, "data";
+
     # Router
+
     my $r = $self->routes;
 
     # Normal route to controller
@@ -65,8 +70,19 @@ sub startup {
     $r->get('/news')->to('news#index');
     $r->get('/techlog')->to('techlog#index');
     $r->get('/workshop')->to('workshop#index');
-    $r->get('/profile')->to('profile#index');
 
+    my $profile = $r->route('/profile')->to(controller => 'profile');
+
+    $profile->route('/')->via('GET')->to(action => 'index')->name('profile');
+    {
+        my $edit = $profile->bridge('/edit')->to(action => 'edit');
+        $edit->get('/info')->to(action => 'edit_info');
+        $edit->post('/info/submit')->to(action => 'edit_info_submit');
+        $edit->get('/preference')->to(action => 'edit_preference');
+        $edit->post('/preference/submit')->to(action => 'edit_preference_submit');
+        $edit->get('/password')->to(action => 'edit_password');
+        $edit->post('/password/submit')->to(action => 'edit_password_submit');
+    }
     $r->get('/test')->to('workshop#test');
 }
 

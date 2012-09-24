@@ -1,0 +1,21 @@
+% layout 'profile';
+
+% content_after profile_menu => begin
+  <a href="/profile">프로필 보기</a>
+  <a href="/profile/edit/info">정보 수정</a>
+  <a href="/profile/edit/preference">개인 설정</a>
+  <a href="/profile/edit/pass">비밀번호 변경</a>
+  <a href="/profile/log">활동 내역</a>
+  <a href="/profile/goodbye">탈퇴</a>
+% end
+
+% content_after profile_main => begin
+  <div class="top">
+    <strong class="name">Hojung Youn <span class="r">(am0c)</span></strong>
+  </div>
+  <div class="main_l">
+  </div>
+  <div class="main_r">
+  </div>
+% end
+

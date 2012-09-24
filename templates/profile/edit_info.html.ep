@@ -1,0 +1,25 @@
+% layout 'profile';
+% include 'profile/menu';
+
+% content_after profile_main => begin
+  <div class="top">
+    <strong>정보 수정</strong>
+  </div>
+  <div class="main_full">
+    <form method="POST" action="/profile/edit/info/submit">
+      <label>이름</label>
+      <input type="text" name="name" value="" />
+      <label>메일주소</label>
+      <input type="text" name="email" value="" />
+      <input type="submit" name="submit" value="수정" />
+    </form>
+    <form method="POST" action="/profile/edit/info/submit" enctype="multipart/form-data">
+      <label>프로필 사진</label>
+      <input type="file" name="pic" value="" />
+      <input type="submit" name="submit" value="수정" />
+    </form>
+
+
+  </div>
+% end
+

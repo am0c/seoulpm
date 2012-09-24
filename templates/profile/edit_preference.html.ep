@@ -1,0 +1,11 @@
+% layout 'profile';
+% include 'profile/menu';
+
+% content_after profile_main => begin
+  <div class="top">
+    <strong>개인 설정</strong>
+  </div>
+  <div class="main_full">
+  </div>
+% end
+

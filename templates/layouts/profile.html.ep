@@ -1,17 +1,30 @@
 % extends 'layouts/base';
 
-%#-- 기본 페이지 테마
+%#-- 페이지 테마
 
 % content_after 'base_include' => begin
- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
  <link rel="stylesheet" type="text/css" href="/css/profile.css" />
 % end
 
-%#-- 기본 페이지에 관리 메뉴 추가
+%#-- 관리 메뉴 추가
 
 % if (defined $user) {
-%= content_after 'header_menu' => begin
+% content_after 'header_menu' => begin
  <dt class="more">프로필</dt>
  <dd class="more"><a href="/profile">설정</a></dd>
 % end
 % }
+
+%#-- 뼈대
+
+<div class="sbar_l">
+  <div class="me">
+    <img class="img_h" src="<%= $user->get_column('image_default') %>" />
+  </div>
+  <div class="menu">
+    %= content "profile_menu"
+  </div>
+</div>
+<div class="main">
+  %= content "profile_main"
+</div>
