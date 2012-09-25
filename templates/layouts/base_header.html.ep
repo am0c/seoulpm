@@ -22,7 +22,7 @@
     %= content_after 'header_menu'
   </dl>
   <ul class="hbar">
-    %= content_after 'header_hbar' => begin
+    % content_after 'header_hbar' => begin
       % if (defined $user) {
         <li><em><%= $user->get_column('nickname') %>님 반갑습니다!</em></li>
         <li><a href="/logout">로그아웃</a></li>
@@ -32,7 +32,8 @@
       % }
     <li><a href="/links">참고사이트</a></li>
     <li><a href="/about">정보</a></li>
-    %= end
+    % end
+    %= content_after 'header_hbar'
   </ul>
 </div>
 % end
