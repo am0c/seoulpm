@@ -1,7 +1,7 @@
 <div id="comment">
 
   <div class="cmt">
-  <img class="icon" src="<%= $user->get_column('image_thumb') %>" />
+  <img class="icon" src="<%= defined $user && $user->get_column('image_thumb') %>" />
   <div class="body">
     <form id="cmt_form" method="post" action="<%= $submit_url %>">
       <textarea name="text" class="input"></textarea>
