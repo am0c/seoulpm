@@ -4,6 +4,8 @@ use SeoulPM::Schema;
 use SeoulPM::Model::Page;
 use SeoulPM::Widget::Manager;
 
+our $VERSION = '0.01';
+
 has schema => sub {
     my $self = shift;
     my $config = $self->plugin('Config', file => 'schema.pl');

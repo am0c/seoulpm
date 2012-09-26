@@ -5,6 +5,15 @@
 \#*\#
 *.swp
 
+# -- build --
+
+/META.yml
+/MYMETA.json
+/MYMETA.yml
+/Makefile
+/pm_to_blib
+/blib
+/inc
 
 # -- directories --
 
